@@ -10,10 +10,12 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/home",
         "text": "首页"
-      },{
+      },
+      {
         "pagePath": "pages/setting/setting",
         "text": "我的"
       }

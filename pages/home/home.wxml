@@ -1,21 +1,21 @@
 <!--pages/home/home.wxml-->
 <view class='container'>
-  <view class='calendar-info'>
-    <view class='content'>
-      <view class='left-box'>
-        <text>农历 三月 廿一</text>
-        <text>丁酉年 甲辰月 庚辰日</text>
-        <text>佛 二〇〇九 三月 廿一</text>
-      </view>
-     <view class='right-box'>
-      <view class='data'>2019年05月星期四</view>
-      <view class='day'>23</view>
-      <view class='year'>猪</view>
+    <view class='calendar-info'>
+        <view class='content'>
+            <view class='left-box'>
+                <text>农历 三月 廿一</text>
+                <text>丁酉年 甲辰月 庚辰日</text>
+                <text>佛 二〇〇九 三月 廿一</text>
+            </view>
+            <view class='right-box'>
+                <view class='data'>2019年05月星期四</view>
+                <view class='day'>23</view>
+                <view class='year'>猪</view>
+            </view>
+        </view>
     </view>
+    <view class='calendar-select'>
+        123
     </view>
-  </view>
-  <view class='calendar-select'>
-    123
-  </view>
 </view>
 
