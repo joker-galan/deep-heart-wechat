@@ -15,7 +15,13 @@
         </view>
     </view>
     <view class='calendar-select'>
-        123
+        <view class='calendar-weeks'>
+            <view class='calendar-weeks-items' wx:key="{{item}}" wx:for="{{weeks}}">{{item}}</view>
+        </view>
+        <view class='calendar-days'>
+            <view class='calendar-day-item' wx:key="{{item.gre}}"
+                  wx:for-item="item" wx:for="{{calendars}}">{{item.gre}}</view>
+        </view>
     </view>
 </view>
 
