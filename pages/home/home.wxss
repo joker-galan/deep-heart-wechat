@@ -51,20 +51,27 @@
 }
 
 .calendar-weeks {
-    width: 100%;
+    padding: 1% 1%;
+    width: 98%;
     height: 60rpx;
     display: flex;
     flex-direction: row;
-    justify-content: space-around
+    justify-content: space-around;
+}
+
+.calendar-weeks-items {
+    width: 14%;
+    text-align: center;
 }
 
 .calendar-days {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around
+    justify-content: start;
 }
 
 .calendar-day-item{
-
+    width: 14%;
 }
