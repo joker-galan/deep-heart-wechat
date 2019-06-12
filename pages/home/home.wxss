@@ -3,19 +3,15 @@
     display: flex;
     max-height: 380rpx;
     flex-grow: 1;
-    background-color: #2FBEB7;
+    /*background-color: #2FBEB7;*/
     flex-direction: column;
 }
 
-.calendar-select::before{
-    content: '';
-    /*border: 1px #ccc solid;*/
-}
 .calendar-select {
     position: relative;
     display: flex;
     flex-grow: 2;
-    background-color: #2FBEB7;
+    /*background-color: #2FBEB7;*/
     flex-direction: column;
 }
 
@@ -36,22 +32,15 @@
 }
 
 .right-box > .day {
-    font-size: 5rem;
+    font-size: 6rem;
     text-align: center;
-}
-
-.right-box > .year {
-    position: absolute;
-    bottom: 5%;
-    right: 12%;
-    font-size: 1.4rem;
 }
 
 .left-box {
     display: flex;
     flex: 1;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -63,9 +52,8 @@
     display: flex;
     flex-direction: row;
     font-size: 1.3rem;
-    /*background: linear-gradient(to left, Red, orange, green, blue, purple);*/
-    /*-webkit-background-clip: text;*/
-    /*color: transparent;*/
+    border-bottom: 1rpx solid #ccc;
+    border-top: 1rpx solid #ccc;
 }
 
 .calendar-weeks-items {
@@ -79,30 +67,39 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    align-items: center;
     justify-content: start;
 }
 
-.calendar-day-item{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 14%;
-    height: 120rpx;
-    align-items:center;
-}
-
 .hover{
-    background-color: rgba(200, 200, 200, 0.4);
+    border-radius: 10rpx;
+    background-color: rgba(0, 0, 0,0.2);
 }
 
 .selected{
-    background-color: green;
+    color: #ccc;
+    border-radius: 10rpx;
+    background-image:url("https://blogx.oss-cn-hangzhou.aliyuncs.com/wechat/deep-heart/selected.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.calendar-day-item{
+    display: flex;
+    flex-direction: column;
+    width: 14%;
+    height: 120rpx;
+    align-items: center;
+    justify-content: center;
 }
 
 .calendar-day-item-top{
     font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
 }
 
 .calendar-day-item-bottom{
     font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
 }

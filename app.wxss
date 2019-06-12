@@ -12,4 +12,8 @@ page {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-image: url("https://blogx.oss-cn-hangzhou.aliyuncs.com/wechat/deep-heart/bg.png") ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
 }

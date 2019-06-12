@@ -1,15 +1,17 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "custom-tab-bar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#2FBEB7",
-    "navigationBarTitleText": "铭记",
-    "navigationBarTextStyle": "white"
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "銘記",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom": true,
     "list": [
       {
         "pagePath": "pages/home/home",
