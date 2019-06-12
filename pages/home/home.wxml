@@ -5,11 +5,11 @@
             <view class='left-box'>
                 <text>农历 三月 廿一</text>
                 <text>丁酉年 甲辰月 庚辰日</text>
-                <text>佛 二〇〇九 三月 廿一</text>
+<!--                <text>佛 二〇〇九 三月 廿一</text>-->
             </view>
             <view class='right-box'>
-                <view class='data'>2019年05月星期四</view>
-                <view class='day'>23</view>
+                <view class='date'>2019年05月 星期四</view>
+                <view class='day'>1</view>
                 <view class='year'>猪</view>
             </view>
         </view>
@@ -19,9 +19,27 @@
             <view class='calendar-weeks-items' wx:key="{{item}}" wx:for="{{weeks}}">{{item}}</view>
         </view>
         <view class='calendar-days'>
-            <view class='calendar-day-item' wx:key="{{item.gre}}"
-                  wx:for-item="item" wx:for="{{calendars}}">{{item.gre}}</view>
+            <view class='calendar-day-item' wx:key="{{item.gre}}" wx:for-item="item" wx:for="{{offset}}"></view>
+            <view class='calendar-day-item {{ touchItem === (utils.slice(item.gre,8))?"hover":"" }} {{curItem === (utils.slice(item.gre,8))?"selected":""}} '
+                  wx:key="{{item.gre}}" wx:for-item="item" data-key="{{utils.slice(item.gre,8)}}" wx:for="{{calendars}}" bind:touchstart="touchStart" bind:touchend="touchEnd">
+                <view class='calendar-day-item-top'>{{utils.slice(item.gre,8)}}</view>
+                <view class='calendar-day-item-bottom'>{{utils.sliceLunar(item.lunar,6)}}</view>
+            </view>
         </view>
     </view>
 </view>
 
+
+<wxs module="utils">
+    var slice = function(array,begin,end) {
+        var s = array.slice(begin,end)
+        return Number(s)
+        }
+    var sliceLunar = function(array,begin,end) {
+        var s = array.slice(begin,end)
+        if(s==='初一'){s=array.slice(4,6)}
+        return s;
+    }
+    module.exports.slice = slice;
+    module.exports.sliceLunar = sliceLunar;
+</wxs>

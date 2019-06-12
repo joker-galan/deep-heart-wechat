@@ -1,16 +1,21 @@
 /* pages/home/home.wxss */
 .calendar-info {
     display: flex;
-    max-height: 320rpx;
+    max-height: 380rpx;
     flex-grow: 1;
     background-color: #2FBEB7;
     flex-direction: column;
 }
 
+.calendar-select::before{
+    content: '';
+    /*border: 1px #ccc solid;*/
+}
 .calendar-select {
+    position: relative;
     display: flex;
     flex-grow: 2;
-    background-color: red;
+    background-color: #2FBEB7;
     flex-direction: column;
 }
 
@@ -18,7 +23,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 320rpx;
+    height: 380rpx;
 }
 
 .right-box {
@@ -31,7 +36,7 @@
 }
 
 .right-box > .day {
-    font-size: 4rem;
+    font-size: 5rem;
     text-align: center;
 }
 
@@ -53,10 +58,14 @@
 .calendar-weeks {
     padding: 1% 1%;
     width: 98%;
-    height: 60rpx;
+    height: 70rpx;
+    line-height: 70rpx;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    font-size: 1.3rem;
+    /*background: linear-gradient(to left, Red, orange, green, blue, purple);*/
+    /*-webkit-background-clip: text;*/
+    /*color: transparent;*/
 }
 
 .calendar-weeks-items {
@@ -65,7 +74,8 @@
 }
 
 .calendar-days {
-    width: 100%;
+    padding: 1% 1%;
+    width: 98%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -73,5 +83,26 @@
 }
 
 .calendar-day-item{
+    display: flex;
+    flex-direction: column;
+    position: relative;
     width: 14%;
+    height: 120rpx;
+    align-items:center;
+}
+
+.hover{
+    background-color: rgba(200, 200, 200, 0.4);
+}
+
+.selected{
+    background-color: green;
+}
+
+.calendar-day-item-top{
+    font-size: 1.4rem;
+}
+
+.calendar-day-item-bottom{
+    font-size: 0.8rem;
 }
