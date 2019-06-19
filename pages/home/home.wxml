@@ -2,14 +2,15 @@
 <view class='container'>
     <view class='calendar-info'>
         <view class='content'>
-            <view class='left-box'>
-                <text>农历 三月廿一</text>
-                <text>丁酉年甲辰月庚辰日</text>
-                <text>佛历 二〇〇九三月廿一</text>
-            </view>
+<!--            <view class='left-box'>-->
+<!--                <text>{{dayInfo.festival}}</text>-->
+<!--                <text>农历 {{dayInfo.lunar}}</text>-->
+<!--&lt;!&ndash;                <text>丁酉年甲辰月庚辰日</text>&ndash;&gt;-->
+<!--                <text>佛历 {{dayInfo.buddha}}</text>-->
+<!--            </view>-->
             <view class='right-box'>
-                <view class='date'>2019年05月 星期四</view>
-                <view class='day'>{{curDay}}</view>
+                <view class='date'>{{dayInfo.month}} {{dayInfo.week}}</view>
+                <view class='day'>{{dayInfo.day}}</view>
             </view>
         </view>
     </view>
@@ -19,10 +20,11 @@
         </view>
         <view class='calendar-days'>
             <view class='calendar-day-item' wx:key="{{item.gre}}" wx:for-item="item" wx:for="{{offset}}"></view>
-            <view class='calendar-day-item {{ touchItem === (utils.slice(item.gre,8))?"hover":"" }} {{curItem === (utils.slice(item.gre,8))?"selected":""}} '
-                  wx:key="{{item.gre}}" wx:for-item="item" data-key="{{utils.slice(item.gre,8)}}" wx:for="{{calendars}}" bind:touchstart="touchStart" bind:touchend="touchEnd">
+            <view class='calendar-day-item {{ touchItem === (utils.slice(item.gre,8))?"hover":"" }} {{curDay === item.gre?"selected":""}} '
+                  wx:key="{{item.gre}}" wx:for-item="item" data-key="{{item.gre}}" wx:for="{{calendars}}"
+                  bind:touchstart="touchStart" bind:touchend="touchEnd">
                 <view class='calendar-day-item-top'>{{utils.slice(item.gre,8)}}</view>
-                <view class='calendar-day-item-bottom'>{{utils.sliceLunar(item.lunar,6)}}</view>
+                <view class='calendar-day-item-bottom'>{{utils.sliceLunar()}}</view>
             </view>
         </view>
     </view>
@@ -31,14 +33,30 @@
 
 <wxs module="utils">
     var slice = function(array,begin,end) {
-        var s = array.slice(begin,end)
-        return Number(s)
+        return Number(array.slice(begin,end))
+    }
+    var sliceLunar = function(event,item,begin) {
+        if(item.surprise) {
+            return item.surprise.slice(0,2)+'…';
+        }else{
+            var array = item.lunar;
+            var s = array.slice(begin)
+            if(s==='初一'){ s=array.slice(4,6)}
+            return s;
         }
-    var sliceLunar = function(array,begin,end) {
-        var s = array.slice(begin,end)
-        if(s==='初一'){s=array.slice(4,6)}
-        return s;
+    }
+    var wxsFunction = function(event, ownerInstance) {
+        var instance = ownerInstance.selectComponent('.classSelector') // 返回组件的实例
+        console.log(instance)
+        instance.setStyle({
+        "font-size": "14px" // 支持rpx
+        })
+        instance.getDataset()
+        instance.setClass(className)
+        // ...
+        return false // 不往上冒泡，相当于调用了同时调用了stopPropagation和preventDefault
     }
     module.exports.slice = slice;
-    module.exports.sliceLunar = sliceLunar;
+    module.exports.sliceLunar = wxsFunction;
+<!--    module.exports.sliceLunar = sliceLunar;-->
 </wxs>

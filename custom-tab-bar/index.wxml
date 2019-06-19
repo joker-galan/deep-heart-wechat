@@ -1,2 +1,5 @@
 <!--custom-tab-bar/index.wxml-->
-<text>custom-tab-bar/index.wxml</text>
+<view class="item">
+    <view class="item-left"></view>
+    <view class="item-right"></view>
+</view>

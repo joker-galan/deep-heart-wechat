@@ -7,15 +7,15 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "white",
-    "navigationBarTitleText": "銘記",
+    "navigationBarTitleText": "忆往昔",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "custom": true,
+    "custom": false,
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "首页"
+        "text": "日历"
       },
       {
         "pagePath": "pages/setting/setting",
